@@ -1,0 +1,87 @@
+@import './variables.less';
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.main_container {
+    background: transparent url('./images/background_01.png') 0% 0% no-repeat padding-box;
+    background-size: cover;
+    height: 100vh;
+    padding: 24px;
+}
+
+.logo_header{
+    width: 64px;
+}
+
+.container_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+h1{
+    font: normal normal 600 36px/40px Poppins;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    margin-bottom: 6px;
+}
+
+p{
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0px;
+    color: @colors[white];
+}
+
+.container_home{
+    margin-top: 40px !important;
+}
+
+.sp_color_pink{
+    color: @colors[pink]
+}
+
+.wrap_buttoms_form{
+    display: flex;
+    position: absolute;
+    top: -30px;
+
+}
+
+.buttom{
+    border: 0.5px solid #9B4BF8;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttom_active{
+    text-decoration: white underline;
+    margin-right: 6px;
+}
+
+.buttom_primary{
+    background: transparent linear-gradient(178deg, #650FAA 0%, #9558C4 100%) 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #4B008666;
+    color: @colors[white];
+    p{
+        font-size: 12px;
+        font-weight: 300;
+    }
+}
+
+.buttom_secondary {
+    background-color: @colors[white];
+    p{
+        font-size: 12px;
+        font-weight: 300;
+        color: @colors[purple_2];
+    }
+}
