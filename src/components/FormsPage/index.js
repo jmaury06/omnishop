@@ -1,15 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
+import { useGlobalContext } from "../../context";
 import Button from "../core/Button";
 import Login from "./Login";
 import RegisterForm from "./Register";
 import "./styles.less";
 
 const FormsPage = () => {
-  const [isActive, setIsActive] = useState(0);
-
+  const { isActive, setIsActive, getBackgroundCase } = useGlobalContext();
   const handleActive = (key) => {
-    setIsActive(key)
-  }
+    setIsActive(key);
+  };
+
+  useEffect(() => {
+    isActive === 1
+      ? getBackgroundCase("bg_register")
+      : getBackgroundCase("bg_default");
+  }, [isActive]);
 
   return (
     <div className="container_form">
@@ -22,7 +28,7 @@ const FormsPage = () => {
           buttom_primary={isActive === 0}
           height="42px"
           width="88px"
-          onClick={()=>handleActive(0)}
+          onClick={() => handleActive(0)}
         >
           Ingreso
         </Button>
@@ -31,7 +37,7 @@ const FormsPage = () => {
           buttom_primary={isActive === 1}
           height="42px"
           width="88px"
-          onClick={()=>handleActive(1)}
+          onClick={() => handleActive(1)}
         >
           Registro
         </Button>
